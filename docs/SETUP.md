@@ -49,10 +49,15 @@ PICO_SERVICE_SCRIPT=/opt/apps/roboticsservice/runService.sh
 ```
 
 For an optional source build, provide Qt6 Core, Network and Core5Compat development
-files, then run `bash scripts/bootstrap_workstation.sh --skip-envs --build-service
---qt-prefix /usr` on one line. Use your Qt SDK prefix if different. The script
-prints a foreground launcher supporting headless operation; setup does not start
-it. The SDK and service are separate builds.
+files, then run:
+
+```bash
+bash scripts/bootstrap_workstation.sh --skip-envs --build-service --qt-prefix /usr
+```
+
+Use your Qt SDK prefix if different. The script prints a foreground launcher
+supporting headless operation; setup does not start it. SDK and service builds are
+separate.
 
 ## Verify and deploy
 
@@ -69,8 +74,8 @@ The workstation checks exercise model IK, collision queries and PICO binding
 imports without initializing the XR SDK. Deployment prints a plan first; stop B
 and recorders before applying it. Existing Orin tools are backed up.
 
-The robot Python needs NumPy, Pinocchio, coal or hpp-fcl, Unitree SDK2 Python,
-CycloneDDS and pyserial. Camera capture uses system Python with RealSense and
+The robot Python needs NumPy, Pinocchio, coal or hpp-fcl, Unitree SDK2 Python and
+CycloneDDS. The direct hand adapter uses the Python standard library. Camera capture uses system Python with RealSense and
 OpenCV/GStreamer, NVIDIA GStreamer encoding plugins and ffprobe.
 `check_orin.sh` inspects the existing runtime without opening camera/serial devices
 or publishing commands. Observed robot versions are recorded separately in the

@@ -1,0 +1,16 @@
+name: g1-ik
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10.22
+  - pinocchio=3.1.0
+  - casadi=3.6.7
+  - numpy=1.26.4
+  - hpp-fcl=2.4.5
+  - eigenpy=3.8.0
+  - ipopt=3.14.17
+  - pip
+  - pip:
+      - meshcat==0.3.2
+      - logging-mp==0.2.5
+      - matplotlib==3.7.5

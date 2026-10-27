@@ -1,0 +1,14 @@
+name: g1-pico
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11.17
+  - numpy=2.3.5
+  - cmake>=3.20,<4
+  - ninja
+  - pip
+  - pip:
+      - setuptools==83.0.0
+      - wheel==0.47.0
+      - pybind11==3.1.0
+# xrobotoolkit_sdk is compiled from dependencies.lock.json by the bootstrap.

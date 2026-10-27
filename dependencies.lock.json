@@ -1,0 +1,58 @@
+{
+  "schema": "g1-pico-source-lock-v1",
+  "repositories": {
+    "xr_teleoperate": {
+      "url": "https://github.com/unitreerobotics/xr_teleoperate.git",
+      "revision": "817fb00c63cde15e5f24a0f8fa08e1e33ed89d3b",
+      "path": "third_party/xr_teleoperate"
+    },
+    "pico_pybind": {
+      "url": "https://github.com/XR-Robotics/XRoboToolkit-PC-Service-Pybind.git",
+      "revision": "c64ccf6acd577a333e03b66fafe8efeeceb511b1",
+      "path": "third_party/XRoboToolkit-PC-Service-Pybind"
+    },
+    "pico_service": {
+      "url": "https://github.com/XR-Robotics/XRoboToolkit-PC-Service.git",
+      "revision": "85bac4dbc1fd5cef42c74a160d9c30aa3491f122",
+      "path": "third_party/XRoboToolkit-PC-Service"
+    }
+  },
+  "tested_workstation": {
+    "architecture": "x86_64",
+    "ik": {
+      "python": "3.10.22",
+      "pinocchio": "3.1.0",
+      "casadi": "3.6.7",
+      "numpy": "1.26.4",
+      "hpp-fcl": "2.4.5",
+      "eigenpy": "3.8.0",
+      "ipopt": "3.14.17",
+      "meshcat": "0.3.2",
+      "logging-mp": "0.2.5"
+    },
+    "pico": {
+      "python": "3.11.17",
+      "numpy": "2.3.5",
+      "xrobotoolkit_sdk": "1.0.2",
+      "pybind11": "3.1.0"
+    },
+    "pico_app": {
+      "release": "v1.1.1",
+      "asset": "XRoboToolkit-PICO-1.1.1-SDK29.apk",
+      "sha256": "6089e1ce175cf3e292cea5919c2b97711151186ca39c4a5569786a12fc167eb2"
+    }
+  },
+  "observed_robot_runtime": {
+    "observed_on": "2026-10-27",
+    "python": "3.10.12",
+    "numpy": "2.2.6",
+    "pinocchio": "4.1.0",
+    "coal": "3.0.4",
+    "note": "Read-only inspection of the existing Orin. These are robot runtime observations, not workstation environment pins or a robot provisioning lock."
+  },
+  "robot_sdk_reference": {
+    "url": "https://github.com/unitreerobotics/unitree_sdk2_python.git",
+    "revision": "814556d15970dd2ecf1c9984e845ca02ab07e206",
+    "note": "Existing robot dependency; the workstation bootstrap does not clone or install it."
+  }
+}

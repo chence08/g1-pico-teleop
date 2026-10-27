@@ -1,0 +1,36 @@
+name: Offline tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  numpy-unit:
+    name: x86 NumPy tests (Python ${{ matrix.python }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.10', '3.11']
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install only the unit dependency
+        run: python -m pip install 'numpy>=1.26,<3'
+      - name: Check source syntax without hardware imports
+        run: bash scripts/test.sh check
+      - name: Run offline unit tests
+        run: bash scripts/test.sh unit --verbose
+
+  # Modeling is a separate local group: bash scripts/test.sh model.
+  # These jobs do not install the Unitree/PICO SDK, use SSH, open serial ports,
+  # or verify physical robot operation. Loopback and Unix sockets are local.
